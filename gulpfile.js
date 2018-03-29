@@ -30,6 +30,8 @@ gulp.task('watch:positionizer.min.js', function() {
 
 gulp.task('default', ['positionizer.min.js']);
 
+gulp.task('tests', ['positionizer.min.js']);
+
 
 gulp.task('all', ['default']);
 
