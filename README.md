@@ -14,10 +14,11 @@ Set relative position to element from a referentiel element
 
 [![Build Status](https://travis-ci.org/Sylvain59650/positionizer.png?branch=master)](https://travis-ci.org/Sylvain59650/positionizer)
 ![Libraries.io for GitHub](https://img.shields.io/librariesio/github/Sylvain59650/positionizer.svg?style=flat-square)
-![npm bundle size (minified)](https://img.shields.io/positionizer/react.svg)
+![npm bundle size (minified)](https://img.shields.io/positionizer/min/react.svg)
 ![npm](https://img.shields.io/npm/l/positionizer.svg)
 [![HitCount](http://hits.dwyl.com/Sylvain59650/positionizer.svg)](http://hits.dwyl.com/Sylvain59650/positionizer)
 </div>
+
 ## Installation
 <code>
 
