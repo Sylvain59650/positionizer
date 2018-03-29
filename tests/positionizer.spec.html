@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <script src="../sources/positionizer.js"></script>
+  <style>
+    .box {
+      border: solid 1px green;
+      width: 80px;
+      height: 50px
+    }
+  </style>
+</head>
+
+<body>
+  <div id="el" style="position:absolute;top:300px;left:600px;border:solid 2px red;width:500px;height:250px">&nbsp;</div>
+  <div id="el2" class="box">bottom-right</div>
+  <div id="el3" class="box">bottom-left</div>
+  <div id="el4" class="box">bottom</div>
+  <div id="el5" class="box">top-right</div>
+  <div id="el6" class="box">right-bottom</div>
+  <div id="el7" class="box">bottom-right</div>
+  <div id="el8" class="box">left-bottom</div>
+  <div id="el9" class="box">left-top</div>
+  <div id="el10" class="box">top-left</div>
+  <div id="el11" class="box">top-center</div>
+
+  <div id="el13" class="box">right</div>
+  <div id="el14" class="box">left</div>
+  <div id="el15" class="box">right-top</div>
+  <div id="el16" class="box">top-right-outside</div>
+  <div id="el17" class="box">top-left-outside</div>
+  <div id="el18" class="box">bottom-left-outside</div>
+  <div id="el19" class="box">bottom-right-outside</div>
+
+
+  <div id="el30" class="box">bottom-right-inside</div>
+  <div id="el31" class="box">bottom-left-inside</div>
+  <div id="el32" class="box">bottom-inside</div>
+  <div id="el33" class="box">top-right-inside</div>
+  <div id="el34" class="box">top-left-inside</div>
+  <div id="el35" class="box">top-inside</div>
+  <div id="el36" class="box">left-inside</div>
+  <div id="el37" class="box">right-inside</div>
+
+  <div id="el38" class="box">center</div>
+
+  <div id="second" style="position:relative;top:1000px;left:600px;border:solid 2px #FFCC00 ;width:300px;height:150px">&nbsp;</div>
+  <div id="el39" style="border:solid 1px green;width:80px;height:50px">bottom-right</div>
+
+  <script>
+    Positionizer.setRelativePosition(el, el2, "bottom-right");
+    Positionizer.setRelativePosition(el, el3, "bottom-left");
+    Positionizer.setRelativePosition(el, el4, "bottom");
+    Positionizer.setRelativePosition(el, el5, "top-right");
+    Positionizer.setRelativePosition(el, el6, "right-bottom");
+    Positionizer.setRelativePosition(el, el7, "bottom-right");
+    Positionizer.setRelativePosition(el, el8, "left-bottom");
+    Positionizer.setRelativePosition(el, el9, "left-top");
+    Positionizer.setRelativePosition(el, el10, "top-left");
+    Positionizer.setRelativePosition(el, el11, "top-center");
+    Positionizer.setRelativePosition(el, el13, "right");
+    Positionizer.setRelativePosition(el, el14, "left");
+    Positionizer.setRelativePosition(el, el15, "right-top");
+
+    Positionizer.setRelativePosition(el, el16, "top-right-outside");
+    Positionizer.setRelativePosition(el, el17, "top-left-outside");
+    Positionizer.setRelativePosition(el, el18, "bottom-left-outside");
+    Positionizer.setRelativePosition(el, el19, "bottom-right-outside");
+
+    Positionizer.setRelativePosition(el, el30, "bottom-right-inside");
+    Positionizer.setRelativePosition(el, el31, "bottom-left-inside");
+    Positionizer.setRelativePosition(el, el32, "bottom-inside");
+    Positionizer.setRelativePosition(el, el33, "top-right-inside");
+    Positionizer.setRelativePosition(el, el34, "top-left-inside");
+    Positionizer.setRelativePosition(el, el35, "top-inside");
+    Positionizer.setRelativePosition(el, el36, "left-inside");
+    Positionizer.setRelativePosition(el, el37, "right-inside");
+
+    Positionizer.setRelativePosition(el, el38, "center");
+    Positionizer.setRelativePosition(second, el39, "bottom-right");
+  </script>
+</body>
+
+</html>
