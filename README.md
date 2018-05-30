@@ -1,3 +1,21 @@
+# Positionizer
+
+Set relative position to element from a referentiel element
+
+ <div style="display:inline">
+    <a target="_blank" title="build" href="https://travis-ci.org/Sylvain59650/positionizer"><img src="https://travis-ci.org/Sylvain59650/positionizer.png?branch=master" /></a>
+    <a target="_blank" title="version" href="https://www.npmjs.com/package/positionizer"><img src="https://img.shields.io/npm/v/positionizer.svg" /></a>
+    <a target="_blank" title="package" href="https://github.com/Sylvain59650/positionizer"><img src="https://img.shields.io/github/package-json/v/Sylvain59650/positionizer.svg" /></a>
+    <a target="_blank" title="dependencies" href="https://david-dm.org/Sylvain59650/positionizer"><img src="https://img.shields.io/david/Sylvain59650/positionizer.svg" /></a>
+    <a target="_blank" title="dependencies graph" href="http://npm.anvaka.com/#/view/2d/positionizer"><img src="https://img.shields.io/badge/dependencies-graph-blue.svg" /></a>
+    <img src="https://img.shields.io/bundlephobia/min/positionizer.svg" />
+    <img src="https://img.shields.io/badge/eslint-ok-blue.svg" />
+    <a target="_blank" title="tests" href="https://sylvain59650.github.io/positionizer/"><img src="https://img.shields.io/badge/tests-passing-brightgreen.svg" /></a>
+    <img src="https://img.shields.io/npm/l/positionizer.svg" />
+    <img src="https://hits.dwyl.com/Sylvain59650/positionizer.svg" />
+  </div>
+
+
  <div class="Note" style="color:orange;font-style:italic">
  
 The lastest version of this document is available on [Github > positionizer](https://github.com/Sylvain59650/positionizer/blob/master/README.md)
@@ -5,19 +23,7 @@ The lastest version of this document is available on [Github > positionizer](htt
 
 </div>
 
-# Positionizer
 
-Set relative position to element from a referentiel element
-
-
-<div style="display:inline">
-
-[![Build Status](https://travis-ci.org/Sylvain59650/positionizer.png?branch=master)](https://travis-ci.org/Sylvain59650/positionizer)
-![Libraries.io for GitHub](https://img.shields.io/librariesio/github/Sylvain59650/positionizer.svg?style=flat-square)
-![npm bundle size (minified)](https://img.shields.io/positionizer/min/react.svg)
-![npm](https://img.shields.io/npm/l/positionizer.svg)
-[![HitCount](http://hits.dwyl.com/Sylvain59650/positionizer.svg)](http://hits.dwyl.com/Sylvain59650/positionizer)
-</div>
 
 ## Installation
 <code>
@@ -75,3 +81,4 @@ where:
     distY : vertical distance between the 2 elements, default is 0.
 <img src="position.png" />
 
+<a href="">API & Demo</a>

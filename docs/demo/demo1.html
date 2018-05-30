@@ -1,7 +1,22 @@
 <html>
 
 <head>
-  <script src="../sources/positionizer.js"></script>
+  <title>positionizer</title>
+  <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+
+<body>
+
+  <div class="breadcrumb">
+    <a href="https://www.npmjs.com/package/positionizer" title="NPM">
+      <img src="https://sylvain59650.github.io/positionizer/img/npm.png" height="32"></a>
+    <a href="https://github.com/Sylvain59650/positionizer" title="GitHub"><img src="https://github.com/favicon.ico" height="32" /></a>
+  </div>
+
+
+  <script src="modules/positionizer/distrib/positionizer.min.js"></script>
   <style>
     .box {
       border: solid 1px green;
@@ -9,9 +24,12 @@
       height: 50px
     }
   </style>
-</head>
 
-<body>
+
+
+  <h1>positionizer</h1>
+
+
   <div id="el" style="position:absolute;top:300px;left:600px;border:solid 2px red;width:500px;height:250px">&nbsp;</div>
   <div id="el2" class="box">bottom-right</div>
   <div id="el3" class="box">bottom-left</div>
@@ -45,33 +63,8 @@
 
   <div id="second" style="position:relative;top:1000px;left:600px;border:solid 2px #FFCC00 ;width:300px;height:150px">&nbsp;</div>
   <div id="el39" style="border:solid 1px green;width:80px;height:50px">bottom-right</div>
-
-  <div id="rond1" style="border:solid 1px orangered;width:4px;height:4px">S</div>
-  <div id="rond2" style="border:solid 1px orangered;width:4px;height:4px">T</div>
-
-  <svg id="svg" style="width:100%;height:100%;top:0;left:0;position: absolute;">
-    <rect x="500" y="200" rx="200" ry="200" width="750" height="350"
-    style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-  </svg>
-
-  <button type="button" id="btnOk">Ok</button>
   <script>
-    function addLine() {
-      var svg = document.querySelector("#svg");
-      debugger;
-      svg.children.push("<path  d='M 100 350 l 150 -300' stroke='red'  stroke-width='3' fill='none' />");
-    }
-
-    //   document.querySelector("#btnOk").onclick = addLine;
-
-    document.querySelector("#svg").onclick = addLine;
-
-    var pos = Positionizer.getRelativePosition(el, el2, "bottom-right", false, 50, 50);
-    Positionizer.setPosition(el2, pos);
-    var attach1 = Positionizer.getAttach(el, "bottom");
-    var attach2 = Positionizer.getAttach(el2, "top");
-    Positionizer.setPosition(rond1, attach1);
-    Positionizer.setPosition(rond2, attach2);
+    Positionizer.setRelativePosition(el, el2, "bottom-right");
     Positionizer.setRelativePosition(el, el3, "bottom-left");
     Positionizer.setRelativePosition(el, el4, "bottom");
     Positionizer.setRelativePosition(el, el5, "top-right");
