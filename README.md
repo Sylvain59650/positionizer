@@ -81,4 +81,4 @@ where:
     distY : vertical distance between the 2 elements, default is 0.
 <img src="position.png" />
 
-<a href="">API & Demo</a>
+<a href="https://sylvain59650.github.io/positionizer/">API & Demo</a>
