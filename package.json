@@ -1,6 +1,6 @@
 {
   "name": "positionizer",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Set relative position to element from a referentiel element",
   "main": "distrib/positionizer.min.js",
   "directories": {},
@@ -32,5 +32,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-watch": "^5.0.0"
   },
-  "homepage": "https://github.com/Sylvain59650/positionizer#readme"
+  "homepage": "https://sylvain59650.github.io/positionizer/",
+  "dependencies": {
+    "htmlelement-extension": "^0.8.8"
+  }
 }

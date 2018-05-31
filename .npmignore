@@ -5,3 +5,4 @@ docs/*
 tests/*
 sources/*
 ts/*
+package-lock*

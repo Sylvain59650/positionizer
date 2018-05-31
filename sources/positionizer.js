@@ -75,6 +75,9 @@ Positionizer.ATTACH_DEFAULT_SPACINGS = {
 };
 
 Positionizer.getAttach = function(el, placement) {
+  if (arguments.length !== 2) {
+    throw TypeError("arguments needed");
+  }
   const x = parseFloat(el.style.left);
   const y = parseFloat(el.style.top);
   const w = parseFloat(el.offsetWidth);
@@ -100,7 +103,10 @@ Positionizer.getAttach = function(el, placement) {
       return { left: x + w, top: y }
     case "top":
       return { left: x + w / 2, top: y }
+    case "center":
+      return { left: x + w / 2, top: y + h / 2 }
   }
+  throw TypeError("unkown placement " + placement);
 }
 
 Positionizer.getRelativePosition = function(fixedEl, floatingEl, placement, appendToBody, distX, distY) {

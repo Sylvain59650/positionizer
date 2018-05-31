@@ -5,7 +5,8 @@ const watch = require("gulp-watch");
 
 
 const chemins = {
-  demo: "./docs/demo/modules/positionizer/distrib/"
+  demo: "./docs/demo/modules/positionizer/distrib/",
+  demoSrc: "./docs/demo"
 };
 
 gulp.task("positionizer.min.js", () => {
@@ -38,6 +39,13 @@ gulp.task("watch:positionizer.min.js", function() {
   });
 });
 
+gulp.task("vendor", () => {
+  return gulp.src([
+      "node_modules/htmlelement-extension/distrib/htmlElement.min.js"
+    ])
+    .pipe(gulp.dest(chemins.demoSrc))
+})
+
 gulp.task("demo", ["positionizer.min.js"], () => {
   return gulp.src([
       "sources/positionizer.js"
@@ -55,7 +63,7 @@ gulp.task("default", ["positionizer.min.js", "demo"]);
 
 gulp.task("tests", ["positionizer.min.js"]);
 
-gulp.task("release", ["positionizer.min.js", "positionizer-es2015.min.js", "demo"]);
+gulp.task("release", ["positionizer.min.js", "positionizer-es2015.min.js", "demo", "vendor"]);
 
 
 

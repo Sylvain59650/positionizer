@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+  <script src="../sources/positionizer.js"></script>
+
+</head>
+<style>
+  #spacer {
+    height: 100px;
+    border: solid 1px gray;
+  }
+</style>
+
+<body>
+  <script src="htmlElement.min.js"></script>
+  <div id="spacer"></div>
+  <div id="el" style="position:absolute;top:100px;left:50px;border:solid 2px red;width:300px;height:250px">&nbsp;</div>
+
+  <div id="mainCircle" style="background-color:black;width:96px;height:96px;border-radius:50px;position:absolute;left:350px;top:500px"></div>
+
+  <script>
+    var circlesInfo = [{
+      pos: "left-top",
+      color: "orangered"
+    }, {
+      pos: "top-left",
+      color: "blue"
+    }, {
+      pos: "left",
+      color: "yellow"
+    }, {
+      pos: "left-bottom",
+      color: "red"
+    }, {
+      pos: "bottom-left",
+      color: "gray"
+    }, {
+      pos: "bottom",
+      color: "green"
+    }, {
+      pos: "right-bottom",
+      color: "black"
+    }, {
+      pos: "bottom-right",
+      color: "marroon"
+    }, {
+      pos: "right",
+      color: "orange"
+    }, {
+      pos: "right-top",
+      color: "cyan"
+    }, {
+      pos: "top-right",
+      color: "fuchsia"
+    }, {
+      pos: "top",
+      color: "olive"
+    }];
+    var circles = [];
+
+    for (var i = 0; i < circlesInfo.length; i++) {
+      var ci = circlesInfo[i];
+      var c = newElement("div", {
+        id: "i" + i,
+        style: "background-color:" + ci.color + ";width:16px;height:16px;border-radius:12px",
+        title: ci.pos,
+        "z-index": 99
+      });
+      document.body.beforeEnd(c);
+      circles.push(c);
+
+      var attach = Positionizer.getAttach(el, ci.pos);
+      Positionizer.setPosition(c, attach);
+    }
+
+
+    var main = qsi("mainCircle");
+    var attachMain = Positionizer.getAttach(main, "center");
+
+    var paper = Raphael(0, 0, 640, 780);
+
+    for (var i = 0; i < circles.length; i++) {
+      var c = circles[i];
+      var attach = Positionizer.getAttach(c, "center");
+      var pathString = "M" + attachMain.left + "," + attachMain.top + " L" + attach.left + "," + attach.top;
+      var line = paper.path(pathString);
+      line.attr("stroke-width", "2");
+      line.attr("stroke", circlesInfo[i].color);
+    }
+  </script>
+</body>
+
+</html>
