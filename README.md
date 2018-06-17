@@ -37,6 +37,10 @@ OR
     yarn add positionizer --save
 </code>
 
+## Without installation 
+
+    <script src="https://cdn.jsdelivr.net/npm/positionizer/distrib/positionizer.min.js"></script>
+    
 ## Reference in browser
 
     <script src="node_modules/positionizer/distrib/positionizer.min.js"></script>
