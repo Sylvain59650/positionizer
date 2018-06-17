@@ -16,7 +16,10 @@ gulp.task("positionizer.min.js", () => {
     .pipe(concat("positionizer.min.js"))
     .pipe(babel({
       presets: ["es2017"],
-      compact: true
+      compact: true,
+      minified: true,
+      comments: false,
+      plugins: ["minify-mangle-names"]
     }))
     .pipe(gulp.dest("distrib"))
 });
@@ -28,7 +31,10 @@ gulp.task("positionizer-es2015.min.js", () => {
     .pipe(concat("positionizer-es2015.min.js"))
     .pipe(babel({
       presets: ["es2015"],
-      compact: true
+      compact: true,
+      minified: true,
+      comments: false,
+      plugins: ["minify-mangle-names"]
     }))
     .pipe(gulp.dest("distrib"))
 });
@@ -40,12 +46,12 @@ gulp.task("watch:positionizer.min.js", function() {
   });
 });
 
-gulp.task("vendor", () => {
-  return gulp.src([
-      "node_modules/htmlelement-extension/distrib/htmlElement.min.js"
-    ])
-    .pipe(gulp.dest(chemins.demoSrc))
-})
+// gulp.task("vendor", () => {
+//   return gulp.src([
+//       "node_modules/htmlelement-extension/distrib/htmlElement.min.js"
+//     ])
+//     .pipe(gulp.dest(chemins.demoSrc))
+// })
 
 gulp.task("demo", ["positionizer.min.js"], () => {
   return gulp.src([
@@ -54,7 +60,8 @@ gulp.task("demo", ["positionizer.min.js"], () => {
     .pipe(concat("positionizer.min.js"))
     .pipe(babel({
       presets: ["es2015"],
-      compact: false
+      compact: false,
+      minified: false
     }))
     .pipe(gulp.dest(chemins.demo))
 });
@@ -64,7 +71,7 @@ gulp.task("default", ["positionizer.min.js", "demo"]);
 
 gulp.task("tests", ["positionizer.min.js"]);
 
-gulp.task("release", ["positionizer.min.js", "positionizer-es2015.min.js", "demo", "vendor"]);
+gulp.task("release", ["positionizer.min.js", "positionizer-es2015.min.js", "demo"]);
 
 
 

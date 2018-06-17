@@ -68,8 +68,12 @@
 
     var pos = Positionizer.getRelativePosition(el, el2, "bottom-right", false, 50, 50);
     Positionizer.setPosition(el2, pos);
-    var attach1 = Positionizer.getAttach(el, "bottom");
-    var attach2 = Positionizer.getAttach(el2, "top");
+    var attach1 = Positionizer.getAttach(el, {
+      place: "bottom"
+    });
+    var attach2 = Positionizer.getAttach(el2, {
+      place: "top"
+    });
     Positionizer.setPosition(rond1, attach1);
     Positionizer.setPosition(rond2, attach2);
     Positionizer.setRelativePosition(el, el3, "bottom-left");

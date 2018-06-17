@@ -70,19 +70,25 @@
       document.body.beforeEnd(c);
       circles.push(c);
 
-      var attach = Positionizer.getAttach(el, ci.pos);
+      var attach = Positionizer.getAttach(el, {
+        place: ci.pos
+      });
       Positionizer.setPosition(c, attach);
     }
 
 
     var main = qsi("mainCircle");
-    var attachMain = Positionizer.getAttach(main, "center");
+    var attachMain = Positionizer.getAttach(main, {
+      place: "center"
+    });
 
     var paper = Raphael(0, 0, 640, 780);
 
     for (var i = 0; i < circles.length; i++) {
       var c = circles[i];
-      var attach = Positionizer.getAttach(c, "center");
+      var attach = Positionizer.getAttach(c, {
+        place: "center"
+      });
       var pathString = "M" + attachMain.left + "," + attachMain.top + " L" + attach.left + "," + attach.top;
       var line = paper.path(pathString);
       line.attr("stroke-width", "2");
