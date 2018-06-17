@@ -14,48 +14,105 @@
 
   <script src="htmlElement.min.js"></script>
 
-  <div id="el" style="position:relative;top:100px;left:50px;border:solid 2px red;width:300px;height:250px">&nbsp;</div>
+  <div id="el" style="position:absolute;top:300px;left:150px;border:solid 2px red;width:300px;height:250px">&nbsp;</div>
 
-  <div id="mainCircle" style="background-color:black;width:96px;height:96px;border-radius:50px;position:absolute;left:350px;top:500px"></div>
+  <div id="mainCircle" style="background-color:black;width:96px;height:96px;border-radius:50px;position:relative;left:50px;top:50px"></div>
 
   <script>
     var circlesInfo = [{
-      pos: "left-top",
-      color: "orangered"
-    }, {
-      pos: "top-left",
-      color: "blue"
-    }, {
-      pos: "left",
-      color: "yellow"
-    }, {
-      pos: "left-bottom",
-      color: "red"
-    }, {
-      pos: "bottom-left",
-      color: "gray"
-    }, {
-      pos: "bottom",
-      color: "green"
-    }, {
-      pos: "right-bottom",
-      color: "black"
-    }, {
-      pos: "bottom-right",
-      color: "marroon"
-    }, {
-      pos: "right",
-      color: "orange"
-    }, {
-      pos: "right-top",
-      color: "cyan"
-    }, {
-      pos: "top-right",
-      color: "fuchsia"
-    }, {
-      pos: "top",
-      color: "olive"
-    }];
+        options: {
+          place: "top-left",
+          dist: {
+            x: -5,
+            y: -5
+          }
+        },
+        color: "blue"
+      }, {
+        options: {
+          place: "left",
+          dist: {
+            x: -5,
+            y: 0
+          }
+        },
+        color: "yellow"
+      },
+
+      {
+        options: {
+          place: "bottom-left",
+          dist: {
+            x: -5,
+            y: -5
+          }
+        },
+        color: "gray"
+      }, {
+        options: {
+          place: "bottom",
+          dist: {
+            x: -5,
+            y: -5
+          }
+        },
+        color: "green"
+      }, {
+        options: {
+          place: "right-bottom",
+          dist: {
+            x: -10,
+            y: -5
+          }
+        },
+        color: "black"
+      }, {
+        options: {
+          place: "bottom-right",
+          dist: {
+            x: -10,
+            y: -5
+          }
+        },
+        color: "marroon"
+      }, {
+        options: {
+          place: "right",
+          dist: {
+            x: -10,
+            y: -5
+          }
+        },
+        color: "orange"
+      }, {
+        options: {
+          place: "right-top",
+          dist: {
+            x: -10,
+            y: -5
+          }
+        },
+        color: "cyan"
+      }, {
+        options: {
+          place: "top-right",
+          dist: {
+            x: -10,
+            y: -5
+          }
+        },
+        color: "fuchsia"
+      }, {
+        options: {
+          place: "top",
+          dist: {
+            x: -5,
+            y: -5
+          }
+        },
+        color: "olive"
+      }
+    ];
     var circles = [];
 
     for (var i = 0; i < circlesInfo.length; i++) {
@@ -63,25 +120,29 @@
       var c = newElement("div", {
         id: "i" + i,
         style: "background-color:" + ci.color + ";width:16px;height:16px;border-radius:12px",
-        title: ci.pos,
+        title: ci.options.pos,
         "z-index": 99
       });
       document.body.beforeEnd(c);
       circles.push(c);
 
-      var attach = Positionizer.getAttach(el, ci.pos);
+      var attach = Positionizer.getAttach(el, ci.options);
       Positionizer.setPosition(c, attach);
     }
 
 
     var main = qsi("mainCircle");
-    var attachMain = Positionizer.getAttach(main, "center");
+    var attachMain = Positionizer.getAttach(main, {
+      place: "center"
+    });
 
     var paper = Raphael(0, 0, 640, 780);
 
     for (var i = 0; i < circles.length; i++) {
       var c = circles[i];
-      var attach = Positionizer.getAttach(c, "center");
+      var attach = Positionizer.getAttach(c, {
+        place: "center"
+      });
       var pathString = "M" + attachMain.left + "," + attachMain.top + " L" + attach.left + "," + attach.top;
       var line = paper.path(pathString);
       line.attr("stroke-width", "2");

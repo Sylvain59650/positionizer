@@ -36,6 +36,7 @@ gulp.task("positionizer-es2015.min.js", () => {
 gulp.task("watch:positionizer.min.js", function() {
   watch("./sources/positionizer.js", function() {
     gulp.run("positionizer.min.js");
+    gulp.run("demo");
   });
 });
 

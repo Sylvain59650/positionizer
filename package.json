@@ -30,10 +30,11 @@
     "gulp": "^3.9.1",
     "gulp-babel": "7.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-watch": "^5.0.0"
+    "gulp-watch": "^5.0.0",
+    "htmlelement-extension": "^0.8.8"
   },
   "homepage": "https://sylvain59650.github.io/positionizer/",
   "dependencies": {
-    "htmlelement-extension": "^0.8.8"
+   
   }
 }

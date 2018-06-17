@@ -74,15 +74,23 @@ Positionizer.ATTACH_DEFAULT_SPACINGS = {
   t: { dx: 2, dy: 2 }
 };
 
-Positionizer.getAttach = function(el, placement) {
+Positionizer.getAttach = function(el, options) {
   if (arguments.length !== 2) {
     throw TypeError("arguments needed");
   }
-  const x = parseFloat(el.style.left);
-  const y = parseFloat(el.style.top);
-  const w = parseFloat(el.offsetWidth);
-  const h = parseFloat(el.offsetHeight);
-  switch (placement) {
+  const bcr = el.getBoundingClientRect();
+  var dX = 0;
+  var dY = 0;
+  if (options && options.dist) {
+    dX = options.dist.x || 0;
+    dY = options.dist.y || 0;
+  }
+  const x = bcr.left + dX;
+  const y = bcr.top + dY;
+  const w = bcr.width;
+  const h = bcr.height;
+
+  switch (options.place) {
     case "left-top":
     case "top-left":
       return { left: x, top: y }
@@ -106,9 +114,10 @@ Positionizer.getAttach = function(el, placement) {
     case "center":
       return { left: x + w / 2, top: y + h / 2 }
   }
-  throw TypeError("unkown placement " + placement);
+  throw TypeError("unkown place " + options.place);
 }
 
+/* eslint-disable */
 Positionizer.getRelativePosition = function(fixedEl, floatingEl, placement, appendToBody, distX, distY) {
   const fixedElPos = appendToBody ? __internal.getOffset(fixedEl, false) : Positionizer.getPosition(fixedEl, false);
   const floatingElStyles = __internal.getAllStyles(floatingEl);
