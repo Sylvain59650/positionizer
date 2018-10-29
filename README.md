@@ -39,17 +39,19 @@ OR
 </code>
 
 ## Without installation 
-
+```html
     <script src="https://cdn.jsdelivr.net/npm/positionizer/distrib/positionizer.min.js"></script>
-    
-## Reference in browser
+```
 
+## Reference in browser
+```html
     <script src="node_modules/positionizer/distrib/positionizer.min.js"></script>
+```
 
 ## usage
-
+```html
     Positionizer.setRelativePosition(refElement, floatingElement, placement, appendToBody, distX, distY);
-
+```
 where:
 
     refElement: the fixed element
