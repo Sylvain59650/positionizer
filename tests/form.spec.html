@@ -1,0 +1,23 @@
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/htmlelement-extension@0.8.10/distrib/htmlElement.min.js"></script>
+  <script src="../sources/positionizer.js"></script>
+
+</head>
+
+<body>
+  <div style="float:right">
+    <input type="text" id="t1" />
+  </div>
+  <div style="background-color: forestgreen;min-height: 50px"></div>
+  <label id="t1_msg">Ce champ est requis</label>
+
+  <script>
+    var t1 = qsi("t1");
+    var msg = qsi("t1_msg");
+    Positionizer.setRelativePosition(t1, msg, "bottom-left");
+  </script>
+</body>
+
+</html>
